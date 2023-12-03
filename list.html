@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>酷我音乐榜</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+</head>
+<style>
+    body {
+        font-family: '宋体';
+    }
+
+    a>img {
+        width: 130px;
+        height: 35px;
+    }
+
+    .media-body {
+        font-size: 8px;
+    }
+
+    td>.media>img {
+        width: 54px;
+        height: 54px;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-white navbar-light border-bottom">
+        <div class="container">
+            <!-- logo -->
+            <a href="songsheet.html" class="navbar-brand">
+                <img src="img/logo.png">
+            </a>
+            <!-- 折叠按钮 -->
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#container">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- 导航 -->
+            <div class="collapse navbar-collapse" id="container">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item mr-lg-2"><a href="#recommend" class="nav-link">推荐歌单</a></li>
+                    <li class="nav-item mr-lg-2"><a href="#charts" class="nav-link">排行榜</a></li>
+                    <li class="nav-item mr-lg-2"><a href="#singer" class="nav-link">歌手推荐</a></li>
+                    <!-- 下拉菜单 -->
+                    <li class="nav-item dropdown mr-lg-3">
+                        <a href="#more" class="nav-link" data-toggle="dropdown"">
+                                更多<span class=" dropdown-toggle"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="index.html" class="dropdown-item">主页</a>
+                            </li>
+                            <li class=" dropdown-divider"></li>
+                            <li>
+                                <a href="songsheet.html" class="dropdown-item"">歌单</a>
+                                </li>
+                                <li>
+                                    <a href=" #" class="dropdown-item"">MV</a>
+                                </li>
+                                <li>
+                                    <a href=" #" class="dropdown-item"">歌手</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- 搜索框 -->
+                    <div class=" input-group input-group-sm col-4">
+                                    <input type="text" class="form-control" placeholder="搜索音乐/MV/歌单/歌手">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text bi bi-search"></span>
+                                    </div>
+            </div>
+        </div>
+        <!-- 模态框 -->
+        <ol class="breadcrumb bg-white mt-3">
+            <li class="breadcrumb-item"><a data-toggle="modal" data-target="#land">登录</a></li>
+            <li class="breadcrumb-item"><a data-toggle="modal" data-target="#logon">注册</a></li>
+        </ol>
+        </div>
+    </nav>
+    <div class="container pt-4">
+        <div class="row">
+            <div class="col-lg-3">
+                <h4>榜单</h4>
+                <div class="accordion" id="accordion-sample">
+                    <div class="card" data-toggle="collapse" data-target="#list1">
+                        <div class="card-header">
+                            <div class="media">
+                                <img class="mr-3" src="img/c1.png">
+                                <div class="media-body ml-2">
+                                    <h5 class="mt-0">酷我热歌榜</h5>
+                                    今日更新
+                                </div>
+                            </div>
+                        </div>
+                        <div id="list1" class="collapse show" data-parent="#accordion-sample">
+                            <div class="card-body">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item border-bottom">
+                                        <div class="media">
+                                            <div class="h4 text-warning">
+                                                <span class="bi bi-award">1</span>
+                                            </div>
+                                            <div class="media-body pl-4">
+                                                <h6>听闻远方有你</h6>
+                                                刘艺雯
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item py-2 border-bottom">
+                                        <div class="media">
+                                            <div class="h4 text-info">
+                                                <span class="bi bi-award">2</span>
+                                            </div>
+                                            <div class="media-body pl-4">
+                                                <h6 class="mt-0">一路生花</h6>
+                                                温奕心
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item pt-2">
+                                        <div class="media">
+                                            <div class="h4 text-danger">
+                                                <span class="bi bi-award">3</span>
+                                            </div>
+                                            <div class="media-body pl-4">
+                                                <h6 class="mt-0">孤勇者</h6>
+                                                陈奕迅
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-toggle="collapse" data-target="#list2">
+                        <div class="card-header">
+                            <div class="media">
+                                <img class="mr-3" src="img/c2.png">
+                                <div class="media-body ml-2">
+                                    <h5 class="mt-0">酷我新歌榜</h5>
+                                    今日更新
+                                </div>
+                            </div>
+                        </div>
+                        <div id="list2" class="collapse" data-parent="#accordion-sample">
+                            <div class="card-body">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item border-bottom">
+                                        <div class="media">
+                                            <div class="h4 text-warning">
+                                                <span class="bi bi-award">1</span>
+                                            </div>
+                                            <div class="media-body pl-4">
+                                                <h6>余生都是你</h6>
+                                                黄子韬
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item py-2 border-bottom">
+                                        <div class="media">
+                                            <div class="h4 text-info">
+                                                <span class="bi bi-award">2</span>
+                                            </div>
+                                            <div class="media-body pl-4">
+                                                <h6 class="mt-0">有你</h6>
+                                                时代少年团
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item pt-2">
+                                        <div class="media">
+                                            <div class="h4 text-danger">
+                                                <span class="bi bi-award">3</span>
+                                            </div>
+                                            <div class="media-body pl-4">
+                                                <h6 class="mt-0">魔镜里的童话</h6>
+                                                张韶涵
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-toggle="collapse" data-target="#list3">
+                        <div class="card-header">
+                            <div class="media">
+                                <img class="mr-3" src="img/c3.png">
+                                <div class="media-body ml-2">
+                                    <h5 class="mt-0">酷我飙升榜</h5>
+                                    今日更新
+                                </div>
+                            </div>
+                        </div>
+                        <div id="list3" class="collapse" data-parent="#accordion-sample">
+                            <div class="card-body">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item border-bottom">
+                                        <div class="media">
+                                            <div class="h4 text-warning">
+                                                <span class="bi bi-award">1</span>
+                                            </div>
+                                            <div class="media-body pl-4">
+                                                <h6>你爱我坏</h6>
+                                                小鬼阿秋
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item py-2 border-bottom">
+                                        <div class="media">
+                                            <div class="h4 text-info">
+                                                <span class="bi bi-award">2</span>
+                                            </div>
+                                            <div class="media-body pl-4">
+                                                <h6 class="mt-0">千年之恋</h6>
+                                                F.I.R.飞儿乐团
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item pt-2">
+                                        <div class="media">
+                                            <div class="h4 text-danger">
+                                                <span class="bi bi-award">3</span>
+                                            </div>
+                                            <div class="media-body pl-4">
+                                                <h6 class="mt-0">街角恋人</h6>
+                                                魏佳艺
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-toggle="collapse" data-target="#list4">
+                        <div class="card-header">
+                            <div class="media">
+                                <img class="mr-3" src="img/c4.png">
+                                <div class="media-body ml-2">
+                                    <h5 class="mt-0">酷我欧美榜</h5>
+                                    今日更新
+                                </div>
+                            </div>
+                        </div>
+                        <div id="list4" class="collapse" data-parent="#accordion-sample">
+                            <div class="card-body">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item border-bottom">
+                                        <div class="media">
+                                            <div class="h4 text-warning">
+                                                <span class="bi bi-award">1</span>
+                                            </div>
+                                            <div class="media-body pl-4">
+                                                <h6>STATY</h6>
+                                                The Kid
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item py-2 border-bottom">
+                                        <div class="media">
+                                            <div class="h4 text-info">
+                                                <span class="bi bi-award">2</span>
+                                            </div>
+                                            <div class="media-body pl-4">
+                                                <h6 class="mt-0">一路生花</h6>
+                                                温奕心
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item pt-2">
+                                        <div class="media">
+                                            <div class="h4 text-danger">
+                                                <span class="bi bi-award">3</span>
+                                            </div>
+                                            <div class="media-body pl-4">
+                                                <h6 class="mt-0">孤勇者</h6>
+                                                陈奕迅
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" data-toggle="collapse" data-target="#list5">
+                        <div class="card-header">
+                            <div class="media">
+                                <img class="mr-3" src="img/c5.png">
+                                <div class="media-body ml-2">
+                                    <h5 class="mt-0">酷我飙升榜</h5>
+                                    今日更新
+                                </div>
+                            </div>
+                        </div>
+                        <div id="list5" class="collapse" data-parent="#accordion-sample">
+                            <div class="card-body">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item border-bottom">
+                                        <div class="media">
+                                            <div class="h4 text-warning">
+                                                <span class="bi bi-award">1</span>
+                                            </div>
+                                            <div class="media-body pl-4">
+                                                <h6>听闻远方有你</h6>
+                                                刘艺雯
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item py-2 border-bottom">
+                                        <div class="media">
+                                            <div class="h4 text-info">
+                                                <span class="bi bi-award">2</span>
+                                            </div>
+                                            <div class="media-body pl-4">
+                                                <h6 class="mt-0">一路生花</h6>
+                                                温奕心
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item pt-2">
+                                        <div class="media">
+                                            <div class="h4 text-danger">
+                                                <span class="bi bi-award">3</span>
+                                            </div>
+                                            <div class="media-body pl-4">
+                                                <h6 class="mt-0">孤勇者</h6>
+                                                陈奕迅
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 pl-5">
+                <span class="text-secondary">
+                    <a class="h1 text-dark">酷我飙升榜</a>
+                    更新时间:2021-12-28
+                </span>
+                <div class="pt-4 ml-1">
+                    <div class="btn-toolbar pb-4">
+                        <div class="btn-group rounded">
+                            <button class="btn btn-warning"><span class="bi bi-skip-forward-circle"></span>播放全部</button>
+                        </div>
+                        <div class="btn-group rounded pl-3">
+                            <button class="btn btn-secondary"><span class="bi bi-plus"></span>添加</button>
+                        </div>
+                        <div class="btn-group rounded pl-3">
+                            <button class="btn btn-secondary"><span class="bi bi-heart"></span>收藏</button>
+                        </div>
+                        <div class="btn-group rounded pl-3">
+                            <button class="btn btn-secondary"><span class="bi bi-chat-square-dots"></span>评论</button>
+                        </div>
+                    </div>
+                    <table class="table table-hover pt-5 table-borderless table-responsive-lg">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>歌曲</th>
+                                <th>歌手</th>
+                                <th>专辑</th>
+                                <th>时长</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <p class="mt-3"><span class="bi bi-award text-warning h4">1</span></p>
+                                </th>
+                                <td>
+                                    <div class="media">
+                                        <img src="img/d1.jpg">
+                                        <div class="media-body pl-4">
+                                            <h6 class="mt-3">你爱我坏</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="mt-3">小鬼阿秋</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">你爱我坏</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">03:13</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <p class="mt-3"><span class="bi bi-award text-info h4">2</span></p>
+                                </th>
+                                <td>
+                                    <div class="media">
+                                        <img src="img/g1.jpg">
+                                        <div class="media-body pl-4">
+                                            <h6 class="mt-3">你爱我坏</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="mt-3">小鬼阿秋</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">你爱我坏</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">03:13</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <p class="mt-3"><span class="bi bi-award text-danger h4">3</span></p>
+                                </th>
+                                <td>
+                                    <div class="media">
+                                        <img src="img/g2.jpg">
+                                        <div class="media-body pl-4">
+                                            <h6 class="mt-3">你爱我坏</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="mt-3">小鬼阿秋</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">你爱我坏</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">03:13</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <p class="mt-3 h4 ml-2">4</p>
+                                </th>
+                                <td>
+                                    <div class="media">
+                                        <img src="img/g3.jpg">
+                                        <div class="media-body pl-4">
+                                            <h6 class="mt-3">你爱我坏</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="mt-3">小鬼阿秋</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">你爱我坏</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">03:13</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <p class="mt-3 h4 ml-2">5</p>
+                                </th>
+                                <td>
+                                    <div class="media">
+                                        <img src="img/g4.jpg">
+                                        <div class="media-body pl-4">
+                                            <h6 class="mt-3">你爱我坏</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="mt-3">小鬼阿秋</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">你爱我坏</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">03:13</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <p class="mt-3 h4 ml-2">6</p>
+                                </th>
+                                <td>
+                                    <div class="media">
+                                        <img src="img/g5.jpg">
+                                        <div class="media-body pl-4">
+                                            <h6 class="mt-3">你爱我坏</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="mt-3">小鬼阿秋</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">你爱我坏</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">03:13</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <p class="mt-3 h4 ml-2">7</p>
+                                </th>
+                                <td>
+                                    <div class="media">
+                                        <img src="img/g6.jpg">
+                                        <div class="media-body pl-4">
+                                            <h6 class="mt-3">你爱我坏</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="mt-3">小鬼阿秋</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">你爱我坏</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">03:13</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <p class="mt-3 h4 ml-2">8</p>
+                                </th>
+                                <td>
+                                    <div class="media">
+                                        <img src="img/d1.jpg">
+                                        <div class="media-body pl-4">
+                                            <h6 class="mt-3">你爱我坏</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="mt-3">小鬼阿秋</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">你爱我坏</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">03:13</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <p class="mt-3 h4 ml-2">9</p>
+                                </th>
+                                <td>
+                                    <div class="media">
+                                        <img src="img/1.jpg">
+                                        <div class="media-body pl-4">
+                                            <h6 class="mt-3">你爱我坏</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="mt-3">小鬼阿秋</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">你爱我坏</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">03:13</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <p class="mt-3 h4 ml-2">10</p>
+                                </th>
+                                <td>
+                                    <div class="media">
+                                        <img src="img/2.jpg">
+                                        <div class="media-body pl-4">
+                                            <h6 class="mt-3">你爱我坏</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="mt-3">小鬼阿秋</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">你爱我坏</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">03:13</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <p class="mt-3 h4 ml-2">11</p>
+                                </th>
+                                <td>
+                                    <div class="media">
+                                        <img src="img/3.jpg">
+                                        <div class="media-body pl-4">
+                                            <h6 class="mt-3">你爱我坏</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="mt-3">小鬼阿秋</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">你爱我坏</p>
+                                </td>
+                                <td>
+                                    <p class="mt-3">03:13</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination  justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 页脚 -->
+    <footer class="bg-dark">
+        <div class="container">
+            <!-- 表格 -->
+            <table class="table table-borderless text-truncate">
+                <thead class="text-light">
+                    <tr>
+                        <th>下载音乐客户端</th>
+                        <th>协议与声明</th>
+                        <th>其他</th>
+                        <th>合作链接</th>
+                    </tr>
+                </thead>
+                <tbody class="text-secondary">
+                    <tr>
+                        <th class="row">
+                            <div class="col-lg-4">
+                                <span class="bi bi-apple h2 ml-3"></span>
+                                <p>iphone版</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <span class="bi bi-phone h2 ml-3"></span>
+                                <p class="text-nowrap">android版</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <span class="bi bi-windows h2 ml-3"></span>
+                                <p class="ml-2"> PC版</p>
+                            </div>
+                        </th>
+                        <td>
+                            <p>
+                                <a>用户协议</a>
+                                <a>免责声明</a>
+                                <a>用户权限</a>
+                            </p>
+                            <p>
+                                <a>隐私政策</a>
+                                <a>权力申明</a>
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <a>联系我们</a>
+                                <a>腾讯音乐</a>
+                                <a>诚聘英才</a>
+                            </p>
+                            <p>
+                                <a>广告服务</a>
+                                <a>网上有害信息举报专区</a>
+                            </p>
+                        </td>
+                        <td>
+                            <p>QQ音乐</p>
+                            <p>酷狗听书</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </footer>
+    <!-- 模态框内容一:登陆选项 -->
+    <div class="modal fade" id="land">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="card mb-4  border-0">
+                                    <img src="img/QQ.jpg" class="card-img-top rounded-circle w-50 m-auto">
+                                    <div class="card-body">
+                                        <p class="card-text text-secondary text-center">QQ登录</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card mb-4  border-0">
+                                    <img src="img/微信.jpg" class="card-img-top rounded-circle w-50 m-auto">
+                                    <div class="card-body">
+                                        <p class="card-text text-secondary text-center">微信登录</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card mb-4  border-0">
+                                    <img src="img/微博.jpg" class="card-img-top rounded-circle w-50 m-auto">
+                                    <div class="card-body">
+                                        <p class="card-text text-secondary text-center">微博登录</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card mb-4  border-0">
+                                    <img src="img/酷我.jpg" class="card-img-top rounded-circle w-50 m-auto">
+                                    <div class="card-body">
+                                        <p class="card-text text-secondary text-center">酷我账号登录</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-8 mt-5 mx-auto">
+                                <form>
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" class="form-check-input">
+                                        <label class="form-check-label">阅读并同意《酷我音乐用户协议》</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-warning btn-lg btn-block mx-auto" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 模态框内容二:注册选项 -->
+    <div class="modal" id="logon">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title mx-auto" id="">注册账号</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <form class="mx-auto">
+                                <div class="form-group">
+                                    <label>手机号</label>
+                                    <input class="form-control" placeholder="请输入您的手机号">
+                                </div>
+                                <div class="form-group">
+                                    <label>验证码</label>
+                                    <input class="form-control" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>设置密码</label>
+                                    <input type="password" class="form-control" placeholder="请设置您的密码">
+                                </div>
+                                <div class="form-group">
+                                    <label>确认密码</label>
+                                    <input type="password" class="form-control" placeholder="请确认您的密码">
+                                </div>
+                                <div class="form-group form-check mx-auto">
+                                    <input type="checkbox" class="form-check-input">
+                                    <label class="form-check-label">阅读并同意《酷我音乐用户协议》</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-warning">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
